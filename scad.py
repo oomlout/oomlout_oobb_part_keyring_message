@@ -132,6 +132,12 @@ def make_scad(**kwargs):
         extra["text_size"] = 6.5
         extras.append(copy.deepcopy(extra))
 
+        #nick's keys
+        extra = {}
+        extra["line_1"] = "NICK'S"
+        extra["line_2"] = "KEYS"
+        extra["text_size"] = 7.5
+        extras.append(copy.deepcopy(extra))
 
 
         styles = []
@@ -147,6 +153,7 @@ def make_scad(**kwargs):
                 p3["height"] = 1
                 p3["thickness"] = 6
                 p3.update(ex)
+                p3["style"] = style 
                 p3["extra"] = f"line_1_{ex['line_1']}_line_2_{ex['line_2']}_style_{style}".lower()
                 #p3["extra"] = ""
                 part["kwargs"] = p3

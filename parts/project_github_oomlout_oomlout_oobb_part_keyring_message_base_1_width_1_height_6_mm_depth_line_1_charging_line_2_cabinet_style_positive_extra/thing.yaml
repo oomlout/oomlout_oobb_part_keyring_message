@@ -32,6 +32,7 @@ kwargs:
   oomp_size: oomlout
   oomp_type: github
   overwrite: true
+  style: positive
   text_size: 5.5
   thickness: 6
   typ: all
@@ -213,6 +214,7 @@ thing:
     radius: 22.0
     save_type: all
     shape: oobb_cylinder
+    style: positive
     text_size: 5.5
     thickness: 6
     typ: all
@@ -245,6 +247,7 @@ thing:
     radius: 7.5
     save_type: all
     shape: oobb_cylinder
+    style: positive
     text_size: 5.5
     thickness: 6
     typ: all
@@ -277,6 +280,7 @@ thing:
     radius: 4.0
     save_type: all
     shape: oobb_cylinder
+    style: positive
     text_size: 5.5
     thickness: 6
     typ: all
@@ -312,6 +316,7 @@ thing:
     save_type: all
     shape: oobb_text
     size: 5.5
+    style: positive
     text: CHARGING
     text_size: 5.5
     thickness: 6
@@ -348,6 +353,7 @@ thing:
     save_type: all
     shape: oobb_text
     size: 5.5
+    style: positive
     text: CABINET
     text_size: 5.5
     thickness: 6
@@ -355,11 +361,11 @@ thing:
     type: positive
     width: 1
   components_string:
-  - oobb_cylinder_shape_positive_type_3_depth_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_positive_extra_22.0_radius
-  - oobb_cylinder_shape_positive_type_3_depth_-17_17_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_positive_extra_7.5_radius
-  - oobb_cylinder_shape_negative_type_3_depth_-17_17_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_positive_extra_4.0_radius
-  - oobb_text_shape_positive_type_4_depth_0_3.6_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_positive_extra_charging_text_5.5_size_arial:bold_font_true_center
-  - oobb_text_shape_positive_type_4_depth_0_-3.6_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_positive_extra_cabinet_text_5.5_size_arial:bold_font_true_center
+  - oobb_cylinder_shape_positive_type_3_depth_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_positive_style_line_1_charging_line_2_cabinet_style_positive_extra_22.0_radius
+  - oobb_cylinder_shape_positive_type_3_depth_-17_17_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_positive_style_line_1_charging_line_2_cabinet_style_positive_extra_7.5_radius
+  - oobb_cylinder_shape_negative_type_3_depth_-17_17_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_positive_style_line_1_charging_line_2_cabinet_style_positive_extra_4.0_radius
+  - oobb_text_shape_positive_type_4_depth_0_3.6_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_positive_style_line_1_charging_line_2_cabinet_style_positive_extra_charging_text_5.5_size_arial:bold_font_true_center
+  - oobb_text_shape_positive_type_4_depth_0_-3.6_0_pos_all_typ_all_save_type_true_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_true_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_positive_style_line_1_charging_line_2_cabinet_style_positive_extra_cabinet_text_5.5_size_arial:bold_font_true_center
   description: oomlout oobb part keyring message base 1x1x6
   description_extra: line_1_charging_line_2_cabinet_style_positive_extra
   description_main: 1_width_1_height_6_mm_depth

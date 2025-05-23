@@ -32,6 +32,7 @@ kwargs:
   oomp_size: oomlout
   oomp_type: github
   overwrite: true
+  style: positive
   text_size: 5.5
   thickness: 6
   type: oomlout_oobb_part_keyring_message_base

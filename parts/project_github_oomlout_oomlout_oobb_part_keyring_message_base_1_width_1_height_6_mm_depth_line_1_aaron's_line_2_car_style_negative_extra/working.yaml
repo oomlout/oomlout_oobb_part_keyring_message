@@ -32,6 +32,7 @@ kwargs:
   oomp_size: oomlout
   oomp_type: github
   overwrite: true
+  style: negative
   text_size: 6.5
   thickness: 6
   typ: all
