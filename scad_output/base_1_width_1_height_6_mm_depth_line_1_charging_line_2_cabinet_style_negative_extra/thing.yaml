@@ -1,0 +1,379 @@
+classification: project
+color: oomlout_oobb_part_keyring_message
+description_extra: line_1_charging_line_2_cabinet_style_negative_extra
+description_main: base_1_width_1_height_6_mm_depth
+full_rotations:
+- 0
+- 0
+- 0
+full_shift:
+- 0
+- 0
+- 0
+id: project_github_oomlout_oomlout_oobb_part_keyring_message_base_1_width_1_height_6_mm_depth_line_1_charging_line_2_cabinet_style_negative_extra
+id_oobb: oobb_part_oomlout_oobb_part_keyring_message_base_1_width_1_height_6_mm_depth_line_1_charging_line_2_cabinet_style_negative_extra
+kwargs:
+  extra: line_1_charging_line_2_cabinet_style_negative
+  filter: ''
+  height: 1
+  line_1: CHARGING
+  line_2: CABINET
+  modes:
+  - 3dpr
+  navigation: false
+  oomp_classification: project
+  oomp_color: oomlout_oobb_part_keyring_message
+  oomp_description_extra: line_1_charging_line_2_cabinet_style_negative_extra
+  oomp_description_main: base_1_width_1_height_6_mm_depth
+  oomp_manufacturer: ''
+  oomp_mode: project
+  oomp_part_number: ''
+  oomp_run: false
+  oomp_size: oomlout
+  oomp_type: github
+  overwrite: true
+  text_size: 5.5
+  thickness: 6
+  type: oomlout_oobb_part_keyring_message_base
+  width: 1
+manufacturer: ''
+name: base
+part_number: ''
+project_name: C:\gh\oomlout_oobb_part_keyring_message
+size: oomlout
+thing:
+  classification: oobb
+  color: ''
+  components:
+  - - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: laser
+      pos: &id001
+      - 0
+      - 0
+      - -1.5
+      r: 22.0
+      radius: 22.0
+      shape: cylinder
+      type: positive
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 3dpr
+      pos: *id001
+      r: 22.0
+      shape: cylinder
+      type: positive
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 'true'
+      pos: *id001
+      r: 22.0
+      radius: 22.0
+      shape: cylinder
+      type: positive
+      width: 1
+  - - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: laser
+      pos: &id002
+      - -17
+      - 17
+      - -1.5
+      r: 7.5
+      radius: 7.5
+      shape: cylinder
+      type: positive
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 3dpr
+      pos: *id002
+      r: 7.5
+      shape: cylinder
+      type: positive
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 'true'
+      pos: *id002
+      r: 7.5
+      radius: 7.5
+      shape: cylinder
+      type: positive
+      width: 1
+  - - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: laser
+      pos: &id003
+      - -17
+      - 17
+      - -1.5
+      r: 4.0
+      radius: 4.0
+      shape: cylinder
+      type: negative
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 3dpr
+      pos: *id003
+      r: 4.0
+      shape: cylinder
+      type: negative
+      width: 1
+    - depth: 3
+      extra: line_1_charging_line_2_cabinet_style_negative
+      h: 3
+      height: 1
+      inclusion: 'true'
+      pos: *id003
+      r: 4.0
+      radius: 4.0
+      shape: cylinder
+      type: negative
+      width: 1
+  - - center: true
+      depth: 4
+      extra: line_1_charging_line_2_cabinet_style_negative
+      font: Arial:Bold
+      halign: center
+      height: 4
+      m: '#'
+      pos:
+      - 0
+      - 3.6
+      - 0
+      shape: text
+      size: 5.5
+      text: CHARGING
+      type: positive
+      valign: center
+      width: 1
+  - - center: true
+      depth: 4
+      extra: line_1_charging_line_2_cabinet_style_negative
+      font: Arial:Bold
+      halign: center
+      height: 4
+      m: '#'
+      pos:
+      - 0
+      - -3.6
+      - 0
+      shape: text
+      size: 5.5
+      text: CABINET
+      type: positive
+      valign: center
+      width: 1
+  components_objects:
+  - depth: 3
+    extra: line_1_charging_line_2_cabinet_style_negative
+    filter: ''
+    height: 1
+    line_1: CHARGING
+    line_2: CABINET
+    modes:
+    - 3dpr
+    navigation: false
+    oomp_classification: project
+    oomp_color: oomlout_oobb_part_keyring_message
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: false
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 0
+    - 0
+    - 0
+    radius: 22.0
+    save_type: none
+    shape: oobb_cylinder
+    text_size: 5.5
+    thickness: 6
+    type: positive
+    width: 1
+  - depth: 3
+    extra: line_1_charging_line_2_cabinet_style_negative
+    filter: ''
+    height: 1
+    line_1: CHARGING
+    line_2: CABINET
+    modes:
+    - 3dpr
+    navigation: false
+    oomp_classification: project
+    oomp_color: oomlout_oobb_part_keyring_message
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: false
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - -17
+    - 17
+    - 0
+    radius: 7.5
+    save_type: none
+    shape: oobb_cylinder
+    text_size: 5.5
+    thickness: 6
+    type: positive
+    width: 1
+  - depth: 3
+    extra: line_1_charging_line_2_cabinet_style_negative
+    filter: ''
+    height: 1
+    line_1: CHARGING
+    line_2: CABINET
+    modes:
+    - 3dpr
+    navigation: false
+    oomp_classification: project
+    oomp_color: oomlout_oobb_part_keyring_message
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: false
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - -17
+    - 17
+    - 0
+    radius: 4.0
+    save_type: none
+    shape: oobb_cylinder
+    text_size: 5.5
+    thickness: 6
+    type: negative
+    width: 1
+  - center: true
+    depth: 4
+    extra: line_1_charging_line_2_cabinet_style_negative
+    filter: ''
+    font: Arial:Bold
+    height: 1
+    line_1: CHARGING
+    line_2: CABINET
+    m: '#'
+    modes:
+    - 3dpr
+    navigation: false
+    oomp_classification: project
+    oomp_color: oomlout_oobb_part_keyring_message
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: false
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 0
+    - 3.6
+    - 0
+    save_type: none
+    shape: oobb_text
+    size: 5.5
+    text: CHARGING
+    text_size: 5.5
+    thickness: 6
+    type: positive
+    width: 1
+  - center: true
+    depth: 4
+    extra: line_1_charging_line_2_cabinet_style_negative
+    filter: ''
+    font: Arial:Bold
+    height: 1
+    line_1: CHARGING
+    line_2: CABINET
+    m: '#'
+    modes:
+    - 3dpr
+    navigation: false
+    oomp_classification: project
+    oomp_color: oomlout_oobb_part_keyring_message
+    oomp_description_extra: ''
+    oomp_description_main: ''
+    oomp_manufacturer: ''
+    oomp_mode: project
+    oomp_part_number: ''
+    oomp_run: false
+    oomp_size: oomlout
+    oomp_type: github
+    overwrite: true
+    pos:
+    - 0
+    - -3.6
+    - 0
+    save_type: none
+    shape: oobb_text
+    size: 5.5
+    text: CABINET
+    text_size: 5.5
+    thickness: 6
+    type: positive
+    width: 1
+  components_string:
+  - oobb_cylinder_shape_positive_type_3_depth_none_save_type_false_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_false_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_negative_extra_22.0_radius
+  - oobb_cylinder_shape_positive_type_3_depth_-17_17_0_pos_none_save_type_false_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_false_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_negative_extra_7.5_radius
+  - oobb_cylinder_shape_negative_type_3_depth_-17_17_0_pos_none_save_type_false_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_false_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_negative_extra_4.0_radius
+  - oobb_text_shape_positive_type_4_depth_0_3.6_0_pos_none_save_type_false_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_false_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_negative_extra_charging_text_5.5_size_arial:bold_font_true_center
+  - oobb_text_shape_positive_type_4_depth_0_-3.6_0_pos_none_save_type_false_navigation_true_overwrite_'3dpr'_modes_project_oomp_mode_false_oomp_run_1_width_1_height_6_thickness_project_oomp_classification_github_oomp_type_oomlout_oomp_size_oomlout_oobb_part_keyring_message_oomp_color_charging_line_1_cabinet_line_2_5.5_text_size_line_1_charging_line_2_cabinet_style_negative_extra_cabinet_text_5.5_size_arial:bold_font_true_center
+  description: oomlout oobb part keyring message base 1x1x6
+  description_extra: line_1_charging_line_2_cabinet_style_negative_extra
+  description_main: 1_width_1_height_6_mm_depth
+  extra: line_1_charging_line_2_cabinet_style_negative
+  folder: C:\gh\oomlout_oobb_version_4_generated_parts\parts\oobb_part_oomlout_oobb_part_keyring_message_base_1_width_1_height_6_mm_depth_line_1_charging_line_2_cabinet_style_negative_extra
+  height: 1
+  height_mm: 14
+  id: oobb_part_oomlout_oobb_part_keyring_message_base_1_width_1_height_6_mm_depth_line_1_charging_line_2_cabinet_style_negative_extra
+  link_main: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/navigation_oomp/oobb/part/oomlout_oobb_part_keyring_message_base/1_width_1_height_6_mm_depth/line_1_charging_line_2_cabinet_style_negative_extra/part
+  link_redirect: https://github.com/oomlout/oomlout_oobb_version_4_generated_parts/tree/main/parts/oobb_oomlout_oobb_part_keyring_message_base_01_01_06_ex_line_1_charging_line_2_cabinet_style_negative
+  manufacturer: ''
+  name: Oobb Part Oomlout Oobb Part Keyring Message Base 1 Width 1 Height 6 mm Depth
+    Line 1 Charging Line 2 Cabinet Style Negative Extra
+  name_short: Oomlout Keyring Message Base 1x1x6 Line
+  part_number: ''
+  short_name: ''
+  size: oomlout_oobb_part_keyring_message_base
+  thickness: 6
+  thickness_mm: 6
+  type: part
+  width: 1
+  width_mm: 14
+type: github
