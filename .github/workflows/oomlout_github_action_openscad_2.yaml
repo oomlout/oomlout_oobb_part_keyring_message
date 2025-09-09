@@ -55,6 +55,11 @@ jobs:
           path: external/oomlout_base
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # Explicitly set PYTHONPATH for all subsequent steps
+      - name: Set PYTHONPATH
+        run: |
+          echo "PYTHONPATH=${{ github.workspace }}:${{ github.workspace }}/external/oomlout_opsc_version_3:${{ github.workspace }}/external/oomlout_oobb_version_4:${{ github.workspace }}/external/oomlout_base" >> $GITHUB_ENV
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
