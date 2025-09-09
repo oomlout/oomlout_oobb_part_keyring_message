@@ -83,7 +83,7 @@ jobs:
       - name: Run build
         #run: python run.py
         run: |
-          python action_generate_all_no_actions.py
+          python action_generate_all_actions.py
       # Commit & push only when running on pushes to main (not on PRs)
       - name: Commit report
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
