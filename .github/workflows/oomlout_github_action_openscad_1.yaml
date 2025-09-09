@@ -78,6 +78,7 @@ jobs:
 
           install_editable external/oomlout_opsc_version_3
           install_editable external/oomlout_oobb_version_4
+          install_editable external/oomlout_base
 
       - name: Run build
         #run: python run.py
