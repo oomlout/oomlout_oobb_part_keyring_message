@@ -1,0 +1,91 @@
+name: oomlout openscad build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Your repo
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Extra repos (public). If private, replace token with a PAT that has repo read.
+      - name: Checkout oomlout_opsc_version_3
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_opsc_version_3
+          path: external/oomlout_opsc_version_3
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout oomlout_oobb_version_4
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_oobb_version_4
+          path: external/oomlout_oobb_version_4
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Install system deps (OpenSCAD)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+          echo "/usr/bin/openscad" >> "$GITHUB_PATH"
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+          # Try to install external repos as editable packages if they’re Python packages
+          install_editable () {
+            local p="$1"
+            if [ -f "$p/setup.py" ] || [ -f "$p/pyproject.toml" ]; then
+              echo "Installing $p as an editable package"
+              pip install -e "$p"
+            else
+              echo "No setup/pyproject in $p; will add to PYTHONPATH"
+              echo "PYTHONPATH=${PYTHONPATH:+$PYTHONPATH:}$GITHUB_WORKSPACE/$p" >> "$GITHUB_ENV"
+            fi
+          }
+
+          install_editable external/oomlout_opsc_version_3
+          install_editable external/oomlout_oobb_version_4
+
+      - name: Run build
+        run: python run.py
+
+      # Commit & push only when running on pushes to main (not on PRs)
+      - name: Commit report
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name  "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "generated scad"
+          git push
