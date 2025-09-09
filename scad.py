@@ -140,6 +140,13 @@ def make_scad(**kwargs):
         extras.append(copy.deepcopy(extra))
 
 
+        #van keys
+        extra = {}
+        extra["line_1"] = "VAN"
+        extra["line_2"] = "KEYS"
+        extra["text_size"] = 10
+        extras.append(copy.deepcopy(extra))
+
         styles = []
         styles.append("positive")
         styles.append("negative")
