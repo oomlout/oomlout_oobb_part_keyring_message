@@ -39,6 +39,14 @@ jobs:
           path: external/oomlout_oobb_version_4
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      #add this repository please https://github.com/oomlout/oomlout_base
+      - name: Checkout oomlout_base
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_base
+          path: external/oomlout_base
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Set up Python 3.10
         uses: actions/setup-python@v5
         with:
