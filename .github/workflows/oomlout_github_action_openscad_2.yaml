@@ -1,0 +1,122 @@
+name: oomlout openscad build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    # Make opsc/oobb/base importable everywhere in this job
+    env:
+      PYTHONPATH: >-
+        ${{ github.workspace }}:
+        ${{ github.workspace }}/external/oomlout_opsc_version_3:
+        ${{ github.workspace }}/external/oomlout_oobb_version_4:
+        ${{ github.workspace }}/external/oomlout_base
+
+    steps:
+      # Your repo
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Extra repos (public). If private, replace token with a PAT that has repo read.
+      - name: Checkout oomlout_opsc_version_3
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_opsc_version_3
+          path: external/oomlout_opsc_version_3
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout oomlout_oobb_version_4
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_oobb_version_4
+          path: external/oomlout_oobb_version_4
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # add this repository please https://github.com/oomlout/oomlout_base
+      - name: Checkout oomlout_base
+        uses: actions/checkout@v4
+        with:
+          repository: oomlout/oomlout_base
+          path: external/oomlout_base
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip
+
+      - name: Install system deps (OpenSCAD)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openscad
+          echo "/usr/bin/openscad" >> "$GITHUB_PATH"
+
+      - name: Install Python deps
+        run: |
+          set -euxo pipefail
+          python -m pip install --upgrade pip
+          # SolidPython provides the `solid` module that opsc relies on
+          pip install solidpython
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+          # Try to install external repos as editable packages if they’re Python packages
+          install_editable () {
+            local p="$1"
+            if [ -f "$p/setup.py" ] || [ -f "$p/pyproject.toml" ]; then
+              echo "Installing $p as an editable package"
+              pip install -e "$p"
+            else
+              echo "No setup/pyproject in $p; will keep PYTHONPATH approach"
+              echo "PYTHONPATH=${PYTHONPATH:+$PYTHONPATH:}$GITHUB_WORKSPACE/$p" >> "$GITHUB_ENV"
+            fi
+          }
+
+          install_editable external/oomlout_opsc_version_3
+          install_editable external/oomlout_oobb_version_4
+          install_editable external/oomlout_base
+
+      - name: Sanity check imports
+        run: |
+          python - <<'PY'
+          import sys
+          print("PYTHONPATH entries:", *sys.path, sep="\n - ")
+          import opsc, oobb
+          print("opsc file:", getattr(opsc, "__file__", "n/a"))
+          print("oobb file:", getattr(oobb, "__file__", "n/a"))
+          PY
+
+      - name: Run build
+        run: |
+          python action_generate_all_actions.py
+
+      # Commit & push only when running on pushes to main (not on PRs)
+      - name: Commit report
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: |
+          git config user.name  "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "generated scad"
+          git push
